@@ -9,19 +9,19 @@
 string name = GetName();
 
 // GET DAY
-int day = GetDate("Day");
+int dayOfBirth = GetDate("Day");
 
 // GET MONTH
-int month = GetDate("Month");
+int monthOfBirth = GetDate("Month");
 
 // GET YEAR
-int year = GetDate("Year");
+int yearOfBirth = GetDate("Year");
 
 // GET AGE
-int age = GetAgeInDays(year, month, day);
+int ageInDays = GetAgeInDays(yearOfBirth, monthOfBirth, dayOfBirth);
 
 // PRINT TO CONSOLE
-Console.WriteLine($"Hello {name}! Your age in days is {age}.");
+Console.WriteLine($"Hello {name}! Your age in days is {ageInDays}.");
 
 /*
  * Description:
@@ -50,16 +50,16 @@ string GetName()
  * Description:
  * - Calculates the user's age in days.
  * Parameters:
- * - int _year: int value for the user's year of birth
- * - int _month: int value for the user's month of birth
- * - int _day: int value for the user's day of birth
+ * - int yearOfBirth: int value for the user's year of birth
+ * - int monthOfBirth: int value for the user's month of birth
+ * - int dayOfBirth: int value for the user's day of birth
  * Returns:
  * - int ageInDays: The user's age calculated in days.
  */
-int GetAgeInDays(int _year, int _month, int _day)
+int GetAgeInDays(int year, int month, int day)
 {
 // CREATE DATETIME OBJECT
-    DateTime birthday = new DateTime(_year, _month, _day);
+    DateTime birthday = new DateTime(year, month, day);
 
 // CALCULATE AGE IN DAYS
     int ageInDays = (int)DateTime.Today.Subtract(birthday).TotalDays;

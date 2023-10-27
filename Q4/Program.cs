@@ -5,7 +5,7 @@
  */
 
 // DEFINE DEDUCTIONS
-const double ANNUAL_BASE_SALARY = 24000; // €
+const double ANNUAL_BASE_SALARY = 10000; // €
 const double TAX = 0.20; // Percentage
 const double PRSI = 0.04; // Percentage
 const double PENSION = 0.10; // Percentage
@@ -16,7 +16,7 @@ string name = GetName();
 double salesTarget = GetMonthlySalesTarget();
 double sales = GetMonthlySales();
 double commission = CalculateCommission(sales, salesTarget);
-double takeHomePay = MakeDeductions(ANNUAL_BASE_SALARY, TAX, PRSI, PENSION, HEALTH_INSURANCE) + commission;
+double takeHomePay = MakeDeductions((ANNUAL_BASE_SALARY+commission), TAX, PRSI, PENSION, HEALTH_INSURANCE);
 
 // CONSOLE OUTPUT
 Console.WriteLine(

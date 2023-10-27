@@ -4,7 +4,6 @@
  * Calculates age in number of days and prints to console.
  */
 
-
 // GET NAME
 string name = GetName();
 
@@ -108,7 +107,6 @@ int GetDate(string date)
             Console.WriteLine($"{date} input must be between {minValue} - {maxValue} inclusive!");
         }
     } while (userInput < minValue || userInput > maxValue);
-
 
     return userInput;
 }

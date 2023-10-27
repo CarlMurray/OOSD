@@ -1,4 +1,12 @@
-﻿// CREATE PRODUCTS
+﻿/*
+ * Q5 solution.
+ * Creates a Product class to represent products.
+ * Prints product details and applies discount to products.
+ * Option to apply discount to multiple products using ApplyBulkDiscount,
+ * or discount products individually using ApplyProductDiscount method.
+ */
+
+// CREATE PRODUCTS
 Product milk = new Product("Milk", "90293", 1.50, "Dairy");
 Product bananas = new Product("Bananas", "63792", 3.50, "Fruit");
 
@@ -64,6 +72,10 @@ public class Product
         Category = _Category;
     }
 
+    /*
+     * Description:
+     * - Prints product details to console.
+     */
     public void PrintProductDetails()
     {
         Console.WriteLine("*********************");
@@ -74,6 +86,12 @@ public class Product
         Console.WriteLine("*********************");
     }
 
+    /*
+     * Description:
+     * - Applies discount to Product.
+     * Parameters:
+     * - double discountPercentage: Percentage discount to apply (always positive).
+     */
     public void ApplyProductDiscount(double discountPercentage)
     {
         Price = (Price * (1 - double.Abs(discountPercentage) / 100));

@@ -97,6 +97,7 @@ double CalculateCommission(double monthlySales, double monthlySalesTarget)
         commissionToTarget = monthlySales * commissionToTargetRate;
         return commissionToTarget;
     }
+
     // ELSE CALCULATE COMMISSION AT BOTH RATES
     commissionToTarget = monthlySalesTarget * commissionToTargetRate;
     commissionOverTarget = monthlySales - monthlySalesTarget * commissionOverTargetRate;

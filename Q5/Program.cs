@@ -6,6 +6,9 @@
  * or discount products individually using ApplyProductDiscount method.
  */
 
+// REQUIRED FOR € SYMBOL
+Console.OutputEncoding = System.Text.Encoding.UTF8;
+
 // CREATE PRODUCTS
 Product milk = new Product("Milk", "90293", 1.50, "Dairy");
 Product bananas = new Product("Bananas", "63792", 3.50, "Fruit");
@@ -81,7 +84,7 @@ public class Product
         Console.WriteLine("*********************");
         Console.WriteLine($"Name: {Name}");
         Console.WriteLine($"ID: {ID}");
-        Console.WriteLine($"Price: €{Price}");
+        Console.WriteLine($"Price: {Price:C}");
         Console.WriteLine($"Category: {Category}");
         Console.WriteLine("*********************");
     }

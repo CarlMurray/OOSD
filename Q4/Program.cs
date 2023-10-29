@@ -4,8 +4,11 @@
  * Calculates commission and take-home pay after deductions.
  */
 
+// REQUIRED FOR € SYMBOL
+Console.OutputEncoding = System.Text.Encoding.UTF8;
+
 // DEFINE DEDUCTIONS
-const double ANNUAL_BASE_SALARY = 10000; // €
+const double ANNUAL_BASE_SALARY = 24000; // €
 const double TAX = 0.20; // Percentage
 const double PRSI = 0.04; // Percentage
 const double PENSION = 0.10; // Percentage
@@ -23,7 +26,7 @@ Console.WriteLine(
     $"Hi {name}. Your annual take home pay is {takeHomePay:C}. This equates to a monthly salary of {takeHomePay / 12:C}.");
 
 /*
- * Descriptions:
+ * Description:
  * - Makes appropriate deductions to base salary.
  * Parameters:
  * - double salary: User's base salary.
@@ -100,6 +103,6 @@ double CalculateCommission(double monthlySales, double monthlySalesTarget)
 
     // ELSE CALCULATE COMMISSION AT BOTH RATES
     commissionToTarget = monthlySalesTarget * commissionToTargetRate;
-    commissionOverTarget = monthlySales - monthlySalesTarget * commissionOverTargetRate;
+    commissionOverTarget = (monthlySales - monthlySalesTarget) * commissionOverTargetRate;
     return commissionOverTarget + commissionToTarget;
 }
